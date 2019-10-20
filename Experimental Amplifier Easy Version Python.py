@@ -12,11 +12,15 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+#list to check which numbers have past
 numbers = []
+
+#filter for bad input
 sound = input('Enter sound data: ')
 while not sound.isdigit():
     sound = input('Enter sound data: ')
 
+#calculate the base and sum, while checking which number has already been past
 x = 0
 sumAll = 0
 base = 0
@@ -28,6 +32,7 @@ while x < len(sound):
         base += 1
     x += 1
 
+#convert the sum to base number
 convertedNum = ''
 num = sumAll
 while num != 0:
@@ -40,4 +45,5 @@ while num != 0:
         convertedNum += '1'
         num = 0
 
+#print result
 print(str(sumAll), str(base), convertedNum[::-1])

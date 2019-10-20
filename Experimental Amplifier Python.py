@@ -16,8 +16,9 @@
 #list to check which insturments are playing, use 10 variables so a range of 1 - 9 is available
 numbers = [False, False, False, False, False, False, False, False, False, False]
 
+#functions
 def getGoodInput(stuff):
-    '''this function filters out bad input and converts a string to an int'''
+    '''this function filters out bad input and returns an int'''
     temp = input(stuff)
     while not temp.isdigit() and temp != 'exit':
         temp = input(stuff)
@@ -86,7 +87,7 @@ def outputCalculation():
         return sumInstruments(), getBase(), quickMaths(sumInstruments())
     
 
-
+#main
 while True:
     inputData = getGoodInput('Please enter sound data: ')
     if inputData == '#':
