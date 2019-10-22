@@ -1,4 +1,19 @@
-#get sound data, assume the user inputs correct data
+#   Copyright 2019 Nathan K. Samijo
+
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+  
+#       http://www.apache.org/licenses/LICENSE-2.0
+
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+
+#variables that will be used to check which number has already passed, this way there can be no double
 een = False
 twee = False
 drie = False
@@ -8,8 +23,11 @@ zes = False
 zeven = False 
 acht = False 
 negen = False
+
+#get sound data, assume the user inputs correct data
 sound = input('Enter sound data: ')
 
+#check which number is in the sound data, add that into the sum, increment the base and check off the numbers this way no duplicate will be added to the sum
 length = len(sound)
 base = 0
 som = 0
@@ -54,6 +72,7 @@ while x < length:
         base = base + 1
     x = x + 1
 
+#convert the amplified sound to another base number
 convertedNumber = ''
 sound = som
 while som != 0:
@@ -66,4 +85,5 @@ while som != 0:
         convertedNumber = convertedNumber + '1'
         som = 0
 
+#print out the results
 print(str(sound) + ' ' + str(base) + ' ' + str(convertedNumber[::-1]))
