@@ -1,7 +1,10 @@
+#print
 print('Enter the sound data and enter "exit" to exit the program')
+
+#main where the magic happens
 while True:
     nummers = {'1':False, '2':False, '3':False, '4':False, '5':False, '6':False, '7':False, '8':False, '9':False}
-    userInput = input('Enter the sound data: ')
+    userInput = input('>>> ')
     if userInput == 'exit':
         break
     x = 0
@@ -13,6 +16,10 @@ while True:
             resultList['base'] += 1
         x += 1
     som = resultList['som']
+
+    if resultList['base'] == 1:
+        resultList['base'] = 10
+    
     while som != 0:
         if som > 1:
             temp = som // resultList['base']

@@ -15,22 +15,23 @@
 #list to check which numbers have past
 numbers = []
 
-#filter for bad input
+#ask for data
 sound = input('Enter sound data: ')
-while not sound.isdigit():
-    sound = input('Enter sound data: ')
 
 #calculate the base and sum, while checking which number has already been past
 x = 0
 sumAll = 0
 base = 0
-sound.replace('0', '')
 while x < len(sound):
-    if not sound[x] in numbers:
+    if not sound[x] in numbers and sound[x] != '0' and sound[x].isdigit():
         numbers.append(sound[x])
         sumAll += int(sound[x])
         base += 1
     x += 1
+
+#set our base to 10 if the base equals 1
+if base == 1:
+    base = 10
 
 #convert the sum to base number
 convertedNum = ''

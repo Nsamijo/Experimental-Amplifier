@@ -38,7 +38,7 @@ def updateNumberList(sound=0):
 
     length = len(sound)
     for x in range(length):
-        if numbers[int(sound[x])] == False:     
+        if numbers[int(sound[x])] == False and int(sound[x]) != 0:     
             numbers[int(sound[x])] = True
     return numbers
 
@@ -68,6 +68,8 @@ def outputCalculation():
         for x in numbers:
             if x:
                 base += 1
+        if base == 1:
+            base = 10
         return base
 
     def sumInstruments():
